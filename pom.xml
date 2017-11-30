@@ -11,6 +11,8 @@
     <properties>
         <!--add prop and use anywhere-->
         <junit.version>4.12</junit.version>
+        <!--bad idea, could be problems with newest versions-->
+        <!--<junit.version>latest</junit.version>-->
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>

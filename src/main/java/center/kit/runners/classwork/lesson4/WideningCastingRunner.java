@@ -1,4 +1,4 @@
-package center.kit.runners.classwork.Lesson4;
+package center.kit.runners.classwork.lesson4;
 
 import center.kit.app.classwork.lesson4.WideningCasting;
 
