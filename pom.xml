@@ -13,6 +13,7 @@
         <junit.version>4.12</junit.version>
         <!--bad idea, could be problems with newest versions-->
         <!--<junit.version>latest</junit.version>-->
+        <junitparams.version>1.1.0</junitparams.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -26,6 +27,12 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <!--without this tag, it will be in prod-->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>pl.pragmatists</groupId>
+            <artifactId>JUnitParams</artifactId>
+            <version>${junitparams.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
