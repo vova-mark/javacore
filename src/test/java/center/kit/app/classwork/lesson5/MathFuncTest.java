@@ -1,6 +1,5 @@
-package center.kit.classwork.lesson5;
+package center.kit.app.classwork.lesson5;
 
-import center.kit.app.classwork.lesson5.MathFunc;
 import org.junit.Assert;
 import org.junit.Test;
 

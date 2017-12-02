@@ -1,4 +1,4 @@
-package center.kit.classwork.lesson6;
+package center.kit.app.classwork.lesson6;
 
 import center.kit.app.classwork.lesson5.MathFunc;
 import junitparams.FileParameters;

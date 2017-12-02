@@ -1,4 +1,4 @@
-package center.kit.homework.lesson5;
+package center.kit.app.homework.lesson5;
 
 
 import org.junit.Assert;
