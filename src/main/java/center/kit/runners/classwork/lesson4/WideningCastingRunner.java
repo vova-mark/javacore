@@ -6,6 +6,6 @@ public class WideningCastingRunner {
 
     public static void main(String[] args) {
         WideningCasting casting = new WideningCasting();
-        casting.widening();
+        casting.widening((byte)127);
     }
 }

@@ -1,9 +1,7 @@
 package center.kit.runners.classwork.lesson6;
 
-import center.kit.app.classwork.lesson6.NumberDefine;
+import center.kit.app.homework.Lesson6.NumberDefine;
 
-import java.io.BufferedReader;
-import java.nio.Buffer;
 import java.util.Scanner;
 
 public class NumberDefineRunner {

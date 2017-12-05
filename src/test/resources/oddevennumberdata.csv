@@ -1,0 +1,4 @@
+argumentA, expectedResult
+0, zero
+12, even
+5, odd

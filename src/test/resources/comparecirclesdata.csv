@@ -1,0 +1,5 @@
+argumentA, argumentB, expectedResult
+-12.53, 12.52, Area of first circle is bigger
+0.002, 0.001, Area of first circle is bigger
+12.00, 12.0001, Area of second circle is bigger
+-1.0, 1.0, Areas are equal

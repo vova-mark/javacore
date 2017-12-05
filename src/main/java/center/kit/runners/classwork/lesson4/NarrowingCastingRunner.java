@@ -7,6 +7,6 @@ public class NarrowingCastingRunner {
     public static void main(String[] args) {
 
         NarrowingCasting casting = new NarrowingCasting();
-        casting.narrowing();
+        casting.narrowing(123.033);
     }
 }

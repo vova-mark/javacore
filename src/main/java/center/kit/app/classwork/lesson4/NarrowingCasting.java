@@ -2,18 +2,18 @@ package center.kit.app.classwork.lesson4;
 
 public class NarrowingCasting {
 
-    double double1 = 3.14159d;
-    float float1 = 0.0f;
+    //double double1 = 3.14159d;
+    public float float1 = 0.0f;
 
-//    int int1 = 0;
-//    float float1 = 3.14159f;
+    //    int int1 = 0;
+    //    float float1 = 3.14159f;
 
-    public void narrowing() {
+    public void narrowing(double value) {
 
-        float1 = (float) double1;
+        this.float1 = (float) value;
         System.out.println(float1);
 
-//        int1 = (short) float1;
-//        System.out.println(int1);
+    //        int1 = (short) float1;
+    //        System.out.println(int1);
     }
 }

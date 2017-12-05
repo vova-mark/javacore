@@ -5,8 +5,8 @@ import center.kit.app.homework.lesson4.utils.convertors.PrimitiveConvertor;
 public class Lesson4Runner {
     public static void main(String[] args) {
 
-        int intValue = 33;
-        float floatValue = 2147483647.12f;
+        int intValue = 34;
+        float floatValue = 33.1231f;
         char charValue = '!';
 
         PrimitiveConvertor convertor = new PrimitiveConvertor();

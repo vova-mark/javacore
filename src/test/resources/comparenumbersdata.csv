@@ -1,0 +1,4 @@
+argumentA, argumentB, expectedResult
+1, 1, Numbers are equal
+0.0001, 0.000099, First is bigger
+1, 1.121, Second is bigger

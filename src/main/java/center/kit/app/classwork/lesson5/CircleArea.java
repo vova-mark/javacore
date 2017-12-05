@@ -4,22 +4,24 @@ import java.util.Scanner;
 
 public class CircleArea {
 
-    public static double calculate(double radius){
-
-        double circleArea = Math.PI * Math.pow(radius, 2);
+    public static float calculateCircleArea(float radius){
+        float circleArea = (float)Math.PI * (float)Math.pow(radius, 2);
         return circleArea;
     }
 
-    public static void compareAreas(double area1, double area2){
+    public static String calculateBigger(float radius1, float radius2){
 
-        if (area1 > area2){
-            System.out.println("First area is bigger");
+        double area1 = CircleArea.calculateCircleArea(radius1);
+        double area2 = CircleArea.calculateCircleArea(radius2);
+
+        if ((radius1 > radius2)||(area1 > area2)){
+            return "Area of first circle is bigger";
         }
-        else if (area1 == area2){
-            System.out.println("Areas are equal");
+        else if ((radius1 == radius2)||(area1 == area2)){
+            return "Areas are equal";
         }
         else {
-            System.out.println("Second area is bigger");
+            return "Area of second circle is bigger";
         }
     }
 }

@@ -13,6 +13,11 @@ public class LoopsRunner {
         System.out.println("Input B value");
         int bNumber = scanner.nextInt();
 
-        LoopsFun.checkNumbersAB(aNumber, bNumber);
+        LoopsFun loopsFun = new LoopsFun();
+        loopsFun.checkNumbersAB(aNumber, bNumber);
+
+        loopsFun.printNumbersLoopFor();
+
+
     }
 }
