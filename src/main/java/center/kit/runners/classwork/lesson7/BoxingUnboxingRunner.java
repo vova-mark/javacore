@@ -1,18 +1,26 @@
 package center.kit.runners.classwork.lesson7;
 
+import java.lang.String;
+
 public class BoxingUnboxingRunner {
     public static void main(String[] args) {
-        java.lang.String intString = new java.lang.String("5");
-        java.lang.String floatString = new java.lang.String("45.21");
-        java.lang.String booleanString = new java.lang.String("5");
-        java.lang.String longString = new java.lang.String("923456789321654789");
 
+        String firstString = "5";
+        String secondString = "45.21";
+        String thirdString = "true";
+        String fouthString = "65465465432165498";
+
+        //new string objects
+        String intString = new java.lang.String(firstString);
+        String floatString = new java.lang.String(secondString);
+        String booleanString = new java.lang.String(thirdString);
+        String longString = new java.lang.String(fouthString);
+
+        //
         int a = Integer.valueOf(intString);
         float f = Float.valueOf(floatString);
         long l = Long.valueOf(longString);
         boolean b = Boolean.valueOf(booleanString);
-
-        int someValue = Integer.valueOf("100500");
 
         System.out.println(a + " " + f + " " + l + " "+ b);
 

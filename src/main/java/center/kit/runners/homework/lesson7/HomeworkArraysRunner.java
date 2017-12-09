@@ -1,4 +1,4 @@
-package center.kit.runners.homework;
+package center.kit.runners.homework.lesson7;
 
 import center.kit.app.homework.lesson7.HomeworkArrays;
 

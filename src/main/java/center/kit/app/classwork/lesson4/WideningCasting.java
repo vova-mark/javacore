@@ -10,8 +10,11 @@ public class WideningCasting {
         long long1 = 0;
         float float1 = 0.0f;
         double double1 = 0.0d;
-        double1 = float1 = long1 = int1 = short1 = byte1;
-        //System.out.println(double1);
+        short1 = byte1;
+        int1 = short1;
+        long1 = int1;
+        float1 = long1;
+        double1 = float1;
         return double1;
 
     }

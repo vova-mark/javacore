@@ -6,7 +6,9 @@ public class NarrowingCastingRunner {
 
     public static void main(String[] args) {
 
+        double value = 123.033;
+
         NarrowingCasting casting = new NarrowingCasting();
-        casting.narrowing(123.033);
+        casting.narrowing(value);
     }
 }
