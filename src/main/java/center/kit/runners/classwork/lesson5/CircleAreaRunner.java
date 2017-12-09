@@ -8,7 +8,7 @@ public class CircleAreaRunner {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter first circle radius: ");
         float firstRadius = scanner.nextFloat();
@@ -20,6 +20,6 @@ public class CircleAreaRunner {
         //double secondArea = CircleArea.calculate(secondRadius);
         //System.out.println("Area of second circle:" + secondArea);
 
-        CircleArea.calculateBigger(firstRadius, secondRadius);
+        CircleArea.calculateBigger(firstRadius, secondRadius);*/
     }
 }
