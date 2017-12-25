@@ -1,7 +1,6 @@
 package center.kit.runners.homework.lesson9;
 
-import center.kit.app.homework.lesson9.Human;
-import center.kit.app.homework.lesson9.WhiteCollar;
+import center.kit.app.homework.lesson9.*;
 
 public class Lesson9HometaskRunner {
     public static void main(String[] args) {
@@ -9,7 +8,8 @@ public class Lesson9HometaskRunner {
         humanRun();
         System.out.println();
         whiteCollarRun();
-
+        System.out.println();
+        bicycleRun();
     }
 
     private static void humanRun(){
@@ -30,6 +30,16 @@ public class Lesson9HometaskRunner {
         whiteCollar.setCompany("Coca.Cola");
         whiteCollar.setCompany("Coca Cola");
         whiteCollar.setCompany("Coca-cola");
+    }
+
+    private static void bicycleRun(){
+
+         BicycleWithRingInterface bicycleWithRing = new BicycleWithRing();
+         bicycleWithRing.ring();
+
+        Bicycle customBicycle = new CustomBicycle();
+        customBicycle.setGear(3);
+        customBicycle.ride();
     }
 
 }
