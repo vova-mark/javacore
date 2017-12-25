@@ -5,13 +5,11 @@ import java.io.*;
 public class ClassworkFileWriter {
 
     private void checkFile (File  file) throws IOException {
-
         if (file.exists()){
             return;
         }else{
             file.createNewFile();
         }
-
     }
 
     public void fileWrite(String path, String stringToWrite) throws IOException {

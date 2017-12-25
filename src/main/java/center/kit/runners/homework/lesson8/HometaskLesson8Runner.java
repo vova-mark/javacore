@@ -12,7 +12,6 @@ public class HometaskLesson8Runner {
 
     public static void main(String[] args) {
         run();
-
     }
 
     public static void run(){
@@ -29,7 +28,6 @@ public class HometaskLesson8Runner {
                     System.out.println("Two Is palindrome: " + PalindromeDefiner.isPalindromeStringReverseWithChars(input));
                     System.out.println("Three Is palindrome: " + PalindromeDefiner.isPalindromeWithHashCodes(input));
                 }
-
             }
         } while (!finish);
 

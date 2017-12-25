@@ -145,4 +145,14 @@ public class HomeworkArrays {
             return input;
 
     }
+
+    public static int[] getArrayOfIntegersFromString(String line, String regex)throws NumberFormatException{
+
+        int [] result = new int[line.split(regex).length];
+        String[] separatedArray = line.split(regex);
+        for (int i = 0; i < separatedArray.length; i++){
+            result[i] = Integer.parseInt(separatedArray[i]);
+        }
+        return result;
+    }
 }
