@@ -1,6 +1,6 @@
 package center.kit.app.homework.lesson8;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class ConsoleInputHelper {
 
@@ -50,5 +50,42 @@ public class ConsoleInputHelper {
         return result;
     }
 
+    public static String[] getArrayOfData(Scanner scanner, String finishWord){
+
+        ArrayList<String> data = new ArrayList<>();
+        boolean isDone = false;
+        do {
+            if (scanner.hasNext()) {
+                String line = scanner.next();
+                if (line.contains(finishWord)){
+                    isDone = true;
+                    data.add(line.substring(0, line.indexOf(finishWord)));
+                    break;
+                }
+                data.add(line);
+            }
+        } while (!isDone);
+        return data.toArray(new String[data.size()]);
+    }
+
+    public static Map<String, String> getProperties(String pattern){
+
+        Map<String, String> propsMap = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
+        String line = "";
+        do {
+            line = scanner.nextLine();
+            if (line.isEmpty()) {
+                break;
+            } else if (line.length() > 0) {
+                String[] pairs = line.split(pattern);
+                if (pairs.length >= 2) {
+                    propsMap.put(pairs[0], pairs[1]);
+                }
+            }
+        }while(true);
+
+        return propsMap;
+    }
 
 }
