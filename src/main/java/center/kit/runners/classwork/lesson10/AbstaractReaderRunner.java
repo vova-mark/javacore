@@ -11,6 +11,5 @@ public class AbstaractReaderRunner {
         fileRd.read("LocalReading");
         fileRd.printSourceOfReading();
     }
-
 }
 

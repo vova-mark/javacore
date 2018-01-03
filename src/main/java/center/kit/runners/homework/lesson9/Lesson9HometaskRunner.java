@@ -5,6 +5,7 @@ import center.kit.app.homework.lesson9.*;
 public class Lesson9HometaskRunner {
     public static void main(String[] args) {
 
+
         humanRun();
         System.out.println();
         whiteCollarRun();
