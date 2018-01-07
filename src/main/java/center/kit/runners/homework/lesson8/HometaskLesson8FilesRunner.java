@@ -1,5 +1,6 @@
 package center.kit.runners.homework.lesson8;
 
+import center.kit.app.homework.lesson10.Lesson8MenuItemsEnum;
 import center.kit.app.homework.lesson7.HomeworkArrays;
 import center.kit.app.homework.lesson8.ConsoleInputHelper;
 import center.kit.app.homework.lesson8.FileHelper;
@@ -15,30 +16,33 @@ public class HometaskLesson8FilesRunner {
     public static void main(String[] args) {
 
         do {
-            System.out.println("1.Read array from file/sort/write sorted to file\n" +
-                    "2.Define palindromes in file\n" +
-                    "3.Write data to file\n" +
-                    "4.Properties file\n" +
-                    "5.Exit");
+            for (Lesson8MenuItemsEnum item : Lesson8MenuItemsEnum.values()){
+                System.out.println(item.ordinal() + ". " + item.getFullName());
+            }
 
             Scanner scanner = new Scanner(System.in);
             if (scanner.hasNextInt()) {
-                int choice = scanner.nextInt();
+
+                Lesson8MenuItemsEnum choice = Lesson8MenuItemsEnum.getValueOf(scanner.nextInt());
                 switch (choice) {
 
-                    case 1:
+                    case ZERO:
+                        HometaskLesson8Runner.run();
+                        break;
+                    case ONE:
                         firstTaskRun(scanner);
                         break;
-                    case 2:
+                    case TWO:
                         secondTaskRun(scanner);
                         break;
-                    case 3:
+                    case THREE:
                         thirdTaskRun(scanner);
                         break;
-                    case 4:
+                    case FOUR:
                         fouthTaskRun(scanner);
                         break;
-                    case 5:
+                    case FIVE:
+                        System.out.println("Have a nice day.");
                         finish = true;
                         break;
                     default:
@@ -77,12 +81,11 @@ public class HometaskLesson8FilesRunner {
                     System.out.println(key + "=" + value);
                 }
                 System.out.println();
-            }else{
+            } else {
                 System.out.println("Nothing to show");
             }
-        }catch(
-                IOException ex)
-        {
+        } catch (
+                IOException ex) {
             ex.getMessage();
         }
     }
@@ -97,7 +100,8 @@ public class HometaskLesson8FilesRunner {
             FileHelper fileHelper = new FileHelper();
             fileHelper.writeToFile(writeFileName, dataToWrite);
         } catch (IOException ex) {
-            System.out.println("Something happened. " + ex.getMessage());;
+            System.out.println("Something happened. " + ex.getMessage());
+            ;
         }
         System.out.println("I'ts done");
     }
@@ -111,8 +115,8 @@ public class HometaskLesson8FilesRunner {
             String[] dataFromFile = fileHelper.readFromFile(readFileName);
 
             if (dataFromFile != null) {
-                for (int i = 0; i < dataFromFile.length; i ++){
-                    if (PalindromeDefiner.isPalindromeCompareBytes(dataFromFile[i])){
+                for (int i = 0; i < dataFromFile.length; i++) {
+                    if (PalindromeDefiner.isPalindromeCompareBytes(dataFromFile[i])) {
                         dataFromFile[i] += " - is polindrome";
                     }
                 }
@@ -125,12 +129,12 @@ public class HometaskLesson8FilesRunner {
             }
         } catch (IOException ex) {
             System.out.println("There are some problems with file: " + ex.getMessage());
-        } catch (NumberFormatException ex){
+        } catch (NumberFormatException ex) {
             System.out.println("Looks like there are not only numbers in file. " + ex.getMessage());
         }
     }
 
-    private static void firstTaskRun(Scanner scanner){
+    private static void firstTaskRun(Scanner scanner) {
         System.out.println("Enter the file name to read from");
         String readFileName = ConsoleInputHelper.getString(scanner);
         String[] dataFromFile = null;
@@ -159,7 +163,7 @@ public class HometaskLesson8FilesRunner {
             }
         } catch (IOException ex) {
             System.out.println("There are some problems with file: " + ex.getMessage());
-        } catch (NumberFormatException ex){
+        } catch (NumberFormatException ex) {
             System.out.println("Looks like there are not only numbers in file. " + ex.getMessage());
         }
     }

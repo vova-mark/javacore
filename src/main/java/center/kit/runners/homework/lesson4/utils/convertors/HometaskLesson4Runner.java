@@ -1,9 +1,9 @@
 package center.kit.runners.homework.lesson4.utils.convertors;
 
+import center.kit.app.homework.lesson4.utils.convertors.Lesson4MenuItemsEnum;
 import center.kit.app.homework.lesson4.utils.convertors.PrimitiveConvertor;
 import center.kit.app.homework.lesson8.ConsoleInputHelper;
 
-import java.lang.reflect.Executable;
 import java.util.Scanner;
 
 public class HometaskLesson4Runner {
@@ -15,30 +15,27 @@ public class HometaskLesson4Runner {
         run();
     }
 
-    //TODO need to fix numeric input after enum been added
-    public static void run(){
+    public static void run() {
         do {
-            System.out.println("What do you want to do?\n" +
-                                "1. Convert int to char\n" +
-                                "2. Convert float to char\n" +
-                                "3. Convert char to int\n" +
-                                "4. Exit.\n" +
-                    "Make your choice. Type one, two, three or four in any case and press Enter");
+            for (Lesson4MenuItemsEnum item : Lesson4MenuItemsEnum.values()) {
+                System.out.println(item.ordinal() + 1 + ". " + item.getFullName());
+            }
+            System.out.println("Make your choice. Type 'one', 'two', 'three' or 'four' and press Enter");
+
 
             Scanner scanner = new Scanner(System.in);
-            if (scanner.hasNext()){
+            if (scanner.hasNext()) {
                 PrimitiveConvertor convertor = new PrimitiveConvertor();
                 String memberChoice = scanner.next();
 
-                //TODO лучше пробежаться по массиву значений emum'а, а не обрабатывать exception
-                try {
-                    Lesson4MenuItemsEnum choice = Lesson4MenuItemsEnum.valueOf(memberChoice.toUpperCase());
+                if (Lesson4MenuItemsEnum.contains(memberChoice)) {
 
-                    switch (choice){
+                    Lesson4MenuItemsEnum choice = Lesson4MenuItemsEnum.valueOf(memberChoice.toUpperCase());
+                    switch (choice) {
 
                         case ONE:
                             System.out.println("Enter integer");
-                            int intValue = (int)ConsoleInputHelper.getFloat(scanner);
+                            int intValue = (int) ConsoleInputHelper.getFloat(scanner);
                             System.out.println("Input int value is: " + intValue + ". Output char value is: " + convertor.intToChar(intValue));
                             break;
 
@@ -58,16 +55,10 @@ public class HometaskLesson4Runner {
                             System.out.println("Have a nice day.");
                             finish = true;
                             break;
-
-                        default:
-                            System.out.println("There isn't such number in menu");
-                            break;
                     }
-                } catch (Exception ex) {
-                    System.out.println("Input exist menu item. " + ex.getMessage());
+                } else {
+                    System.out.println("Wrong input. Type 'one', 'two', 'three' or 'four' and press Enter");
                 }
-            }else {
-                System.out.println("Something wrong have been entered. ");
             }
         } while (!finish);
 

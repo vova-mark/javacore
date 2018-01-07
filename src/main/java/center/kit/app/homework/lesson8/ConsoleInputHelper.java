@@ -12,8 +12,7 @@ public class ConsoleInputHelper {
             if (scanner.hasNextFloat()) {
                 isDone = true;
                 result = scanner.nextFloat();
-            }
-            else if (scanner.hasNext()){
+            } else if (scanner.hasNext()) {
                 scanner.next();
                 System.out.println("Wrong input. Please input numeric value");
             }
@@ -27,9 +26,9 @@ public class ConsoleInputHelper {
         do {
             if (scanner.hasNext()) {
                 String input = scanner.next();
-                if (input.length() > 1){
+                if (input.length() > 1) {
                     System.out.println("Type only one letter");
-                }else{
+                } else {
                     result = input.charAt(0);
                     isDone = true;
                 }
@@ -50,14 +49,14 @@ public class ConsoleInputHelper {
         return result;
     }
 
-    public static String[] getArrayOfData(Scanner scanner, String finishWord){
+    public static String[] getArrayOfData(Scanner scanner, String finishWord) {
 
         ArrayList<String> data = new ArrayList<>();
         boolean isDone = false;
         do {
             if (scanner.hasNext()) {
                 String line = scanner.next();
-                if (line.contains(finishWord)){
+                if (line.contains(finishWord)) {
                     isDone = true;
                     data.add(line.substring(0, line.indexOf(finishWord)));
                     break;
@@ -68,7 +67,7 @@ public class ConsoleInputHelper {
         return data.toArray(new String[data.size()]);
     }
 
-    public static Map<String, String> getProperties(String pattern){
+    public static Map<String, String> getProperties(String pattern) {
 
         Map<String, String> propsMap = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
@@ -83,9 +82,39 @@ public class ConsoleInputHelper {
                     propsMap.put(pairs[0], pairs[1]);
                 }
             }
-        }while(true);
+        } while (true);
 
         return propsMap;
+    }
+
+    public static int getInt(Scanner scanner) {
+        boolean isDone = false;
+        int result = 0;
+        do {
+            if (scanner.hasNextInt()) {
+                isDone = true;
+                result = scanner.nextInt();
+            } else if (scanner.hasNext()){
+                scanner.next();
+                System.out.println("Input integer numeric value");
+            }
+        }while (!isDone);
+        return result;
+    }
+
+    public static boolean getBoolean(Scanner scanner) {
+        boolean isDone = false;
+        boolean result = false;
+        do {
+            if (scanner.hasNextBoolean()) {
+                isDone = true;
+                result = scanner.nextBoolean();
+            } else if (scanner.hasNext()){
+                scanner.next();
+                System.out.println("Input 'true' or 'false'");
+            }
+        }while (!isDone);
+        return result;
     }
 
 }

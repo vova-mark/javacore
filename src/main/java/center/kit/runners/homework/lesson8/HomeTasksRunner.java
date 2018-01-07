@@ -1,69 +1,72 @@
 package center.kit.runners.homework.lesson8;
 
-import center.kit.runners.homework.lesson4.utils.convertors.HometaskLesson4Runner;
-import center.kit.runners.homework.lesson6.HometaskLesson6Runner;
-import center.kit.runners.homework.lesson7.HomeworkArraysRunner;
+import center.kit.app.homework.lesson10.MenuItemsEnum;
 
 import java.util.Scanner;
 
+import static center.kit.app.homework.lesson10.MenuItemsEnum.*;
+
 public class HomeTasksRunner {
+
     private static boolean finish = false;
 
     public static void main(String[] args) {
-        do {
-            System.out.println(
-                    "1. Hometask - Lesson4\n" +
-                    "2. Hometask - Lesson6\n" +
-                    "3. Hometask - Lesson7\n" +
-                    "4. Hometask - Lesson8\n" +
-                    //"5. Hometask - Lesson\n" +
-                    "6. Exit\n");
 
+        do {
+            for (MenuItemsEnum item : values()) {
+                System.out.println(item.ordinal() + 1 + ". " + item.getFullName());
+            }
             HomeTasksRunner.run();
 
-        }while(!finish);
+        } while (!finish);
 
     }
 
-    private static void run(){
+    private static void run() {
         System.out.println("Input number of menu point");
         Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextInt()){
-            int memberchoice = scanner.nextInt();
+        if (scanner.hasNextInt()) {
 
-            switch (memberchoice){
+            int memberchoise = scanner.nextInt();
+            MenuItemsEnum choise = MenuItemsEnum.getValueOf(memberchoise);
 
-                case 1:
-                    HometaskLesson4Runner.run();
-                    System.out.println();
-                    break;
+            if (choise != null) {
+                switch (choise) {
 
-                case 2:
-                    HometaskLesson6Runner.run();
-                    System.out.println();
-                    break;
+                    case LESSON4:
+                        LESSON4.runItem();
+                        System.out.println();
+                        break;
 
-                case 3:
-                    HomeworkArraysRunner.main(null);
-                    System.out.println();
-                    break;
+                    case LESSON6:
+                        LESSON6.runItem();
+                        System.out.println();
+                        break;
 
-                case 4:
-                    HometaskLesson8Runner.run();
-                    System.out.println();
-                    break;
+                    case LESSON7:
+                        LESSON7.runItem();
+                        System.out.println();
+                        break;
 
-                case 6:
-                    System.out.println("Good night");
-                    finish = true;
-                    break;
+                    case LESSON8:
+                        LESSON8.runItem();
+                        System.out.println();
+                        break;
 
-                default:
-                    System.out.println("There isn't such number in menu");
-                    break;
+                    case LESSON10:
+                        LESSON10.runItem();
+                        System.out.println();
+                        break;
+
+                    case EXIT:
+                        EXIT.runItem();
+                        finish = true;
+                        break;
+                }
+            } else {
+                System.out.println("There isn't such number in menu");
             }
-        }
-        else if(scanner.hasNext()){
+        } else if (scanner.hasNext()) {
             System.out.println("Something wrong have been entered");
         }
     }
